@@ -125,4 +125,61 @@ if("VERDAD?" %in% x){
 #### Estructura repeat ####
 #### Estructura NEXT / BREAK ####
 
+#### Paquetes ####
+
+# Una vez que se instaló un paquete se tiene que utlizar el comando library() para que ese 
+# paquete empiece a funcionar.
+
+install.packages("gclus") #Se instaló el paquete gclucs
+library(gclus) #Esto es para empezar a utilizarlo
+help(package = "gclus") #Esto es para visualizar el contenido del nuevo paquete instalado.
+
+#### Funciones ####
+
+es.par <- function(numero){
+  residuo <- numero %% 2
+  if (residuo==0)
+  return(TRUE)
+  return(FALSE)
+}
+# El nombre de la función es "es.par", la función se ejecuta sobre el objeto "numero".
+# Dentro de las {} van las condiciones de la función. El vector "residuo" es un "numero" 
+# divisible por 2 if residuo es igual (==) a cero (0). es.par toma el valor de TRUE, caso
+# contrario toma el valor FALSE
+
+es.par(25) #FALSE
+es.par(12482) #TRUE
+
+es.impar <- function(número){
+  residuo <- número %% 2
+  if (residuo!=0)
+    return(TRUE)
+    return(FALSE)
+}
+
+es.impar(20)
+
+es.divisible.por <- function(entero.grande,entero.pequeño){
+  if(entero.grande %% entero.pequeño !=0)
+    return(FALSE)
+    return(TRUE)
+}
+
+es.divisible.por(40,10)
+es.divisible.por(53,25) 
+
+es.par <- function(num){
+  es.divisible.por(num,2)
+}
+
+es.par(47)
+
+# ME QUEDE EN LA PÁGINA 66 
+
+
+
+
+
+
+
 
