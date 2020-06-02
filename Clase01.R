@@ -92,4 +92,37 @@ if (x>5) {
 
 q <- runif(10,0,20) #10 es el número de elementos,  0 - 20 es el rango
 VectorBoolaono <- (q>=14) #El resultado es un vector logical
-NumAprobados1 <- sum(VectorBoolaono)#Solo dos cumplen con la condición 
+NumAprobados1 <- sum(VectorBoolaono)#NumAprobados es la suma 
+NumAprobados2 <- length(VectorBoolaono[VectorBoolaono==T])#Otra forma de calcular el total
+# de aprovados
+
+which(VectorBoolaono)
+if (NumAprobados1>0){
+  q[which(VectorBoolaono)]
+}
+# which me muestra el orden de los elementos que cumplen con la condición (los TRUE)
+# Ese if me muestra el valor de esos elementos que cumplen con la condición
+
+help("which")
+help("system.time")
+
+system.time(sum(VectorBoolaono))
+system.time(length(VectorBoolaono[VectorBoolaono==T])) #Al final no entiendo para que sirve jeje
+
+x <- c("¿Qué","es","VERDAD?")
+if("VERDAD?" %in% x){
+  print("verdad se encontró en IF")
+} else if("VERDAD?" %in% x){
+  print("VERDAD se encontró en IF_ELSE")
+} else{
+  print("No se econtró la VERDAD")
+}
+# Pta no entiendo
+# Falta el ejemplo 4 de estructura de decisión. 
+
+#### Estructura de repetición ####
+#### Estructura while ####
+#### Estructura repeat ####
+#### Estructura NEXT / BREAK ####
+
+
