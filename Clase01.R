@@ -174,10 +174,84 @@ es.par <- function(num){
 
 es.par(47)
 
-# ME QUEDE EN LA PÁGINA 66 
+#### Objetos en R ####
+x <- c(2,4,6)
+y <- c(3,7)
 
+c(x,y)
+x <- c(1:5)^2
+x[-c(2,5)] #Los corchetes se utilizan para generar subvectores formado por alguna de las 
+x[x>5] #de las coordenadas de un vector. 
+which(x>15) #Me da el orden de los elementos dentro del vector que cumplen con la condición
+# dentro de los paréntesis
 
+x <- matrix(5:8,3,4)
+which(x>6) #El orden de los valores va de columna por columna de arriba a abajo.
+y <- 1:3
+z <- 4:6
+cbind(y,z)
+rbind(z,y)
 
+x <- matrix(5:8, 3,4)
+mean(x)#Saca la media de todos los valores de la matriz
+apply(x,2,mean) #Esta función aplica una misma operación para cada una de las filas o
+# columnas de una matriz, el primer elemento es la matriz, el segundo elemento es 1=fila
+# 2=columna, el tercer elemento es la operación.
+
+# ////////////////////////////////////////////////////////////////////////////////////
+
+# Operaciones más habituales en una matriz
+x <- matrix(5:25, 4,4)
+y <- matrix(3:45, 4,4)
+x%*%y #Producto matricial
+x*y #Producto de elemento por elemento
+det(y) #determinante de una matriz
+# Resolver sistemas de ecuaciones lineales:
+  # (Ax=b) solve(A,b) = x(A)^-1*b
+
+A <- matrix(c(1,2,3,4), ncol=2)
+solve(A) # solve sirve para sacar la inversa de una matriz
+eigen(A) #Autvalores de una matriz
+
+# LISTAS: son vectores con objetos de distintos tipos. 
+
+milista <- list(nombre= "Pepe", no.hijos=3, 
+                edades.hijos = c(4,7,9))
+str(milista) #Muestra los objetos en la lista y su tipo
+milista$nombre #Me sale Pepe
+milista[[1]] #Otra  foma de que salga pepe
+milista$edades.hijos[2] #Para que salga el segundo elemento de la variable edades.hijos
+
+milista[2:3]
+milista[[2:3]]
+ 
+# DATAFRAME
+
+x <- 7:9
+y <- c("a","b","c")
+mi.fichero <- data.frame(edad=x,grupo=y) 
+# Los dataframes son un tipo especial de lista, por eso se puede utilizar las mismas opciones
+str(mi.fichero)
+mi.fichero[[2]]
+mi.fichero[2]
+mi.fichero[2,]
+
+# Factor
+genero <- c("Masc", "Fem","Masc","Masc","Fem","Fem")
+genero <- factor(genero)#Este comando otorga Un número discreto a las categorias dentro 
+# de una variable
+
+as.integer(genero) #El comando factor le otorgo al elemento Masc el valor de 2 y a Fem el 
+# valor de 1. Esto es por el orden alfabético. 
+
+# FACTORES ORDINALES
+eval.prof <- c(1,3,2,2,1,3) #Creamos un vector numérico que registra los datos
+eval.prof <- factor(eval.prof)#Covertimos el vector a un factor
+levels(eval.prof) <- c("Malo","Regular","Bueno")#Asignamos los niveles al factor. Debe estar
+# en un orden ascendente
+eval.prof <- ordered(eval.prof) #Le endicamos que se trata de un factor ordinal
+
+#### Exportación e importación de datos ####
 
 
 
